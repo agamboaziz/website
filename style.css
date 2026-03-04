@@ -1,0 +1,120 @@
+@import url('https://fonts.googleapis.com/css2?family=Assistant:wght@300;400;700&display=swap'); /* מייבא גופן מודרני מגוגל פונטס */
+
+body {
+    background-image: url('img/2png.jpg'); /* תמונת רקע בכל עמוד באתר */
+    background-size: cover; /* פריסת התמונה על כל שטח המסך */
+    background-repeat: no-repeat; /* מניעת שכפול של התמונה */
+    background-position: center; /* מרכז את התמונה במסך */
+    background-attachment: fixed; /*  גורם לרקע להישאר קבוע בזמן גלילה בעמוד*/
+    color: white; /* צבע טקסט לבן */
+    font-family: 'Assistant', sans-serif;  /* הגדרת הגופן שייבאנו לכל האתר */
+    min-height: 100vh; /* מבטיח שהגוף יתפוס לפחות את כל גובה המסך */
+    margin: 0; /* ביטול שוליים חיצוניים של הדפדפן */
+    padding: 0; /* ביטול מרווחים פנימיים של הדפדפן */
+}
+
+h2 {
+    color:white; /* צבע טקסט לבן לכותרת */
+    background-color: rgba(40, 167, 69, 0.7); /*  h2 רקע ירוק לכותרת בגודל */
+    display: inline-block; /* גורם לרקע להיות רק בגודל הטקסט */
+    padding: 10px 30px; /* מרווח פנימי מסביב לטקסט הכותרת */
+    border-radius: 10px; /* עיגול פינות לרקע הכותרת */
+    text-align: center; /* מרכז את הטקסט בתוך התבנית */
+    font-weight: 700; /* הפיכת הטקסט למודגש  */
+    margin-top: 20px; /* מרווח מהחלק העליון */
+}
+
+.card, .showoff-card {
+    background:  rgba(0, 0, 0, 0.6); /*  רקע כהה שקוף */
+    border: 1px solid rgba(255, 255, 255, 0.1); /* מסגרת דקה מאוד ולבנה שקופה */
+    border-radius: 20px; /* עיגול פינות לכרטיס */
+    transition: transform 0.3s ease, box-shadow 0.3s ease; /* אנימציה חלקה במעבר עכבר */
+    color: white; /* צבע טקסט לבן בתוך הכרטיס */
+    padding: 1.5rem; /* מרווח פנימי בתוך הכרטיס */
+    margin-bottom: 20px; /* רווח בין כרטיס לכרטיס */
+}
+
+.card h4 {
+    text-align: center; /* מרכוז כותרת בתוך הכרטיס */
+    font-weight: 600; /* עובי גופן בינוני-גבוה */
+    font-size: 22px; /* גודל הטקסט של הכותרת */
+    color: #2ebd1e; /* צבע ירוק ספציפי לכותרת הקטנה */
+    margin-bottom: 15px; /* רווח מתחת לכותרת */
+}
+
+.gallery {
+    display: grid; /* הגדרת תצוגת רשת (Grid) */
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); /* סידור אוטומטי של תמונות לפי רוחב מסך */
+    gap: 20px; /* רווח בין התמונות בגלריה */
+    padding: 20px; /* מרווח פנימי לכל הגלריה */
+}
+
+.gallery img {
+    width: 100%; /* התמונה תתפוס את כל רוחב התא שלה */
+    height: 200px; /* גובה קבוע לתמונות בגלריה */
+    object-fit: cover; /* חיתוך חכם של התמונה כדי שלא תתעוות */
+    border-radius: 15px; /* עיגול פינות לתמונות */
+    transition: transform 0.3s; /* הגדלה איטית של התמונה */
+    }
+
+.gallery img:hover { transform: scale(1.05); } /* הגדלה קלה של התמונה במעבר עכבר */
+
+.grid-container {
+    display: flex; /* סידור גמיש של עמודות השליטה */
+    justify-content: space-around; /* פיזור שווה של העמודות ברווחים */
+    gap: 40px; /* רווח גדול בין עמודות המנועים */
+    margin-top: 10px; /* רווח מלמעלה */
+}
+
+.column {
+    display: flex; /* סידור גמיש פנימי לעמודה */
+    flex-direction: column; /* סידור האלמנטים אחד מתחת לשני */
+    gap: 10px; /* רווח בין הכפתורים בתוך העמודה */
+    flex: 1; /* גורם לכל העמודות להיות ברוחב שווה */
+}
+
+.btn-percent {
+    border: 1px solid rgba(255, 255, 255, 0.2); /* מסגרת שקופה */
+    border-radius: 6px; /* עיגול פינות לכפתורי האחוזים */
+    padding: 8px 15px; /* מרווח פנימי לכפתור */
+    font-weight: bold; /* טקסט מודגש בתוך כפתור */
+    background: rgba(255, 255, 255, 0.1); /* רקע לבן שקוף מאוד */
+    color: white; /* צבע טקסט לבן */
+    cursor: pointer; /* שינוי הסמן ליד (לחיצה) */
+}
+
+.btn-percent:hover {
+  background:  #28a745; /* שינוי רקע לירוק במעבר עכבר - כשהעכבר על הכפתור */
+}
+
+.navbar-dark .navbar-nav .nav-link {
+    color: white; /* טקסט לבן בתפריט */
+    font-weight: 600; /* עובי גופן לכל תבנית */
+    padding: 10px 20px ; /* רווח בין התבניות בתפריט*/
+    transition: 0.3s ease; /* אנימציה למעבר עכבר */
+    }
+
+.navbar-dark .navbar-nav .nav-link:hover {
+    background-color: rgb(13, 80, 28); /* רקע ירוק שקוף במעבר עכבר */
+    border-radius: 8px; /* עיגול פינות  */
+}
+
+.navbar-dark .navbar-nav .nav-link.active {
+    background-color: #074b23; /* רקע ירוק מלא בתבנית שבה העמוד מופיע למשתמש */
+    border-radius: 8px; /* עיגול פינות לעמוד הפעיל */
+    }
+
+form.container {
+    background: rgba(12, 35, 20, 0.9); /* רקע ירוק כהה ושקוף לטופס */
+    padding: 25px 35px; /* מרווח פנימי בטופס */
+    border-radius: 20px; /* עיגול פינות לטופס */
+    border: 1px solid rgba(40, 167, 69, 0.3); /* מסגרת ירוקה דקה */
+    margin-top: 60px !important; /* מרווח מהתפריט העליון */
+    max-width: 380px !important; /* הגבלת רוחב הטופס שלא יהיה רחב מדי */
+}
+
+.form-control {
+    background: rgb(163, 230, 154); /* רקע לבן ירקרק לשדות הקלט */
+    border: 1px solid rgba(40, 167, 69, 0.4) ; /* מסגרת ירוקה לשדות הקלט */
+}
+
