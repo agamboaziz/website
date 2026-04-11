@@ -95,7 +95,40 @@ document.addEventListener('DOMContentLoaded', () => {
 
 });
 
+// משתנים לשמירת המצב (מתחילים ב-0)
+let bit4 = "0", bit1 = "0", bit0 = "0"; 
+let speedBits = "00";
 
+// כשלוחצים על מספר סיבובים (למשל 4)
+function updateCycles(num) {
+    // הפירוק הבינארי לפי המשקלים 4, 2, 1
+    bit4 = (num & 4) ? "1" : "0"; // האם המספר מכיל 4?
+    bit1 = (num & 2) ? "1" : "0"; // האם המספר מכיל 2?
+    bit0 = (num & 1) ? "1" : "0"; // האם המספר מכיל 1?
+}
+
+// כשלוחצים על מהירות
+function updateSpeed(bits) {
+    speedBits = bits;
+}
+
+// כשלוחצים על START - בנייה ושליחה
+function sendToFirebase() {
+    let bit76 = "10"; // מצב אוטומט קבוע
+    let bit5  = "1";  // פקודת Start
+
+    // מחברים הכל לפי הסדר בציור שלך: [76][5][4][32][10]
+    let finalByte = bit76 + bit5 + bit4 + speedBits + bit1 + bit0;
+
+    // הצגה על המסך
+    document.getElementById('bin-output').innerText = "הערך שיישלח: " + finalByte;
+
+    // שליחה לענף toAltera ב-Firebase
+    // (בהנחה ש-db הוא המשתנה של מסד הנתונים שלך)
+    firebase.database().ref("/toAltera").set(finalByte);
+    
+    console.log("נשלח לפיירבייס:", finalByte);
+}
 
 
 

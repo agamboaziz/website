@@ -131,9 +131,40 @@
           <div class="text-center mt-3">
             <button class="btn-percent" id="64" style="background-color: red;" >STOP</button>
           </div>
+          
         </div>
       </div>
     </div>
+    <div class="robot-panel" style="direction: rtl; border: 2px solid #333; padding: 20px; width: fit-content; text-align: center; justify-content: center;">
+    <h3>בקר רובוט - מצב אוטומטי</h3>
+    
+    <div class="section">
+        <p>בחר כמות סיבובים (1-7):</p>
+        <button type="button" onclick="updateCycles('1')">1</button>
+        <button type="button" onclick="updateCycles('2')">2</button>
+        <button type="button" onclick="updateCycles('3')">3</button>
+        <button type="button" onclick="updateCycles('4')">4</button>
+        <button type="button" onclick="updateCycles('5')">5</button>
+        <button type="button" onclick="updateCycles('6')">6</button>
+        <button type="button" onclick="updateCycles('7')">7</button>
+    </div>
+
+    <div class="section" style="margin-top: 15px;">
+        <p>בחר מהירות:</p>
+        <button type="button" onclick="updateSpeed('00')">25%</button>
+        <button type="button" onclick="updateSpeed('01')">50%</button>
+        <button type="button" onclick="updateSpeed('10')">75%</button>
+        <button type="button" onclick="updateSpeed('11')">100%</button>
+    </div>
+
+    <br>
+    <button type="button" onclick="sendToFirebase()" style="background: red; color: white; padding: 10px 30px; font-weight: bold; cursor: pointer;">START</button>
+    
+    <div style="margin-top: 20px; background: #eee; padding: 10px;">
+        <strong>נתיב toAltera:</strong>
+        <span id="bin-output" style="font-family: monospace; font-size: 1.2em;">10100000</span>
+    </div>
+</div>
   </div>
 </div>
 
