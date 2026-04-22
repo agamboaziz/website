@@ -15,7 +15,7 @@ if (saveBtn) {
     saveBtn.addEventListener('click', async () => {
         const url = streamInput.value.trim();
         localStorage.setItem('esp32camStreamUrl', url);
-        if (url && streamImg) {
+        if (url && 3) {
             streamImg.src = url;
         }
         try { 
@@ -113,11 +113,19 @@ function sendToFirebase() {
     let bit76 = "10";
     let bit5  = "1";  
 
-    let finalByte = bit76 + bit5 + bit4 + speedBits + bit1 + bit0;
-    document.getElementById('bin-output').innerText = "הערך שיישלח: " + finalByte;
-    firebase.database().ref("/toAltera").set(finalByte);
-    console.log("נשלח לפיירבייס:", finalByte);
+    let finalByteStr = bit76 + bit5 + bit4 + speedBits + bit1 + bit0;
+    
+    // המרה למספר עשרוני (בסיס 10)
+    let decimalValue = parseInt(finalByteStr, 2);
+
+    document.getElementById('bin-output').innerText = "הערך העשרוני: " + decimalValue;
+    
+    firebase.database().ref("/toAltera").set(decimalValue);
+    
+    console.log("נשלח כעשרוני:", decimalValue);
 }
+
+
 
 
 
